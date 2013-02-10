@@ -37,7 +37,7 @@ get '/call' do
 	  :to => to_phone,     # To any number
 	  :url => 'http://twimlets.com/echo?Twiml=%3CResponse%3E%3CSay%3E' + @message + '%3C%2FSay%3E%3C%2FResponse%3E'   # Fetch instructions from this URL when the call connects
 	)
-	redirect to('/?log=Call_Successful');
+	redirect '/?log=Call_Successful'
 end
 
 get '/sms' do
@@ -48,5 +48,5 @@ get '/sms' do
     		:to => to_phone,
     		:body => @message
   	) 
-	redirect to('/?log=SMS_Successful');
+	redirect '/?log=SMS_Successful'
 end
